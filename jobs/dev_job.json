@@ -1,0 +1,21 @@
+{
+    "name": "databricks_cluster",
+    "new_cluster": {
+        "spark_version": "14.3.x-scala2.12",
+        "node_type_id": "Standard_D4ds_v5",
+        "autoscale": {
+            "min_workers": 1,
+            "max_workers": 2
+    }},
+    "libraries": [],
+    "spark_python_task": {
+        "python_file": "dbfs:/FileStore/scripts/etl_dev.py"
+        // "python_file": "${DBFS_SCRIPT_PATH}"
+    },
+    "max_retries": 1,
+    // "schedule": {
+    //     "quartz_cron_expression": "0 0 0 * * ?",  // Every day at midnight
+    //     "timezone_id": "UTC",
+    //     "pause_status": "UNPAUSED"
+    // }
+}
