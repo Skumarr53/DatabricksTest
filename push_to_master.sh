@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to automatically commit changes and push to master branch
+# Script to automatically commit changes and push to main branch
 
 # Navigate to the Git repository directory (optional, if you want to ensure you're in the right directory)
 # cd /path/to/your/repo
@@ -8,14 +8,14 @@
 # Check the current branch
 current_branch=$(git branch --show-current)
 
-if [ "$current_branch" != "master" ]; then
-    echo "You are not on the master branch. Switching to master branch."
-    git checkout master
+if [ "$current_branch" != "main" ]; then
+    echo "You are not on the main branch. Switching to main branch."
+    git checkout main
 fi
 
-# Pull the latest changes from the remote master branch
-echo "Pulling the latest changes from master branch..."
-git pull origin master
+# Pull the latest changes from the remote main branch
+echo "Pulling the latest changes from main branch..."
+git pull origin main
 
 # Add all changes to the staging area
 echo "Adding all changes..."
@@ -26,9 +26,9 @@ commit_message="Automated commit: $(date)"
 echo "Committing changes with message: $commit_message"
 git commit -m "$commit_message"
 
-# Push changes to the master branch
-echo "Pushing changes to master branch..."
-git push origin master
+# Push changes to the main branch
+echo "Pushing changes to main branch..."
+git push origin main
 
-echo "Changes successfully pushed to master branch."
+echo "Changes successfully pushed to main branch."
 
